@@ -174,3 +174,18 @@ let index = addressBookArray.findIndex((obj => obj.firstName == "Prachi"));
 addressBookArray.splice(index, 1);
 console.log("After Deletion");
 console.log(addressBookArray);
+
+//Uc6-Ability to find Number of Contacts in AddressBook
+let count = addressBookArray.reduce((counter, person) => counter + 1, 0);
+console.log(count);
+
+//Uc7-Duplicate Check on Person Name
+let person4 = new Person("Swarali","More","Afgred","Sdghurr","Sfdfsfd","154432","919885485745","swara23@gmail.com");
+
+if(addressBookArray.findIndex(contact => contact.firstName == person4.firstName) == -1){
+    addressBookArray[3] = person4;
+}
+else{
+    console.log("Duplicate Entry");
+}
+console.log(addressBookArray);
