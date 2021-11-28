@@ -206,3 +206,9 @@ console.log(personFromState);
 let contact = addressBookArray.filter(person5 => person5.city == "Chennai" || person5.state == "Tamilnadu" );
 console.log("Contacts from city 'Chennai' or State tamilnadu  are : ")
 console.log(contacts);
+
+//UC10 count person state and City.
+
+console.log("No.of Persons from city = 'Chennai' and state = 'Tamilnadu' : ");
+let countByCity = addressBookArray.filter(person5 => person5.city =="chennai" ).reduce((count, person5) => count + 1,0);
+console.log(countByCity);
