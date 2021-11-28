@@ -210,5 +210,21 @@ console.log(contacts);
 //UC10 count person state and City.
 
 console.log("No.of Persons from city = 'Chennai' and state = 'Tamilnadu' : ");
-let countByCity = addressBookArray.filter(person5 => person5.city =="chennai" ).reduce((count, person5) => count + 1,0);
-console.log(countByCity);
+let countbyCityAndState = addressBookArray.filter(person5 => person5.city =="chennai" && person5.state == "Tamilnadu").reduce((count, person5) => count + 1,0);
+console.log(countbyCityAndState);
+
+//UC11:Sort AddressBook by their first name
+console.log(addressBookArray);
+function compare( a, b ) {
+    if ( a.firstName < b.firstName ){
+      return -1;
+    }
+    if ( a.firstName > b.firstName ){
+      return 1;
+    }
+    return 0;
+  }
+
+console.log("AddressBook After Sorting");
+console.log(addressBookArray.sort(compare));
+  
