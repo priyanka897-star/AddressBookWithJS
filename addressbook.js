@@ -154,10 +154,15 @@ try {
 catch (e) {
     console.error(e);
 }
-let newPerson = new Person("Swarali","More","Afgred","Bdsget","Sfdfsfd","154432","919885485745","swara23@gmail.com");
+let newPerson = new Person("Swarali","More","Afgred","Sdghurr","Sfdfsfd","154432","919885485745","swara23@gmail.com");
 console.log(newPerson.toString());
 let addressBookArray = [];
 addressBookArray[0] = newPerson;
 addressBookArray[1] = person;
 console.log(addressBookArray);
+//Uc4-Editing City which has firstName = "Swarali"
+let objIndex = addressBookArray.findIndex((obj => obj.firstName == "Swarali"))
+console.log("Before Update : " + addressBookArray[objIndex]);
+addressBookArray[objIndex].city = "Mumbai";
+console.log("After Update : " + addressBookArray[objIndex]);
 
