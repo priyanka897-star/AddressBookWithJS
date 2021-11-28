@@ -198,7 +198,11 @@ console.log(addressBookArray);
 let contacts = addressBookArray.filter(person => person.city == "Chennai");
 console.log("Contacts from city 'Chennai' are : ")
 console.log(contacts);
-
+//UC9
 let personFromState = addressBookArray.filter(person => person.state == "Tamilnadu");
 console.log("Contacts from State 'Tamilnadu' are : ");
 console.log(personFromState);
+
+let contact = addressBookArray.filter(person5 => person5.city == "Chennai" || person5.state == "Tamilnadu" );
+console.log("Contacts from city 'Chennai' or State tamilnadu  are : ")
+console.log(contacts);
