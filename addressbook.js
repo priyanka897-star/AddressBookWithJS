@@ -96,7 +96,7 @@ class Person {
     }
 }
 
-let person = new Person("Priya","More","Adsfsd","Xsfsdfe","Sfdgfr","454432","981254857445","priya123@gmail.com");
+let person = new Person("Priyanka","More","Adsfsd","Xsfsdfe","Sfdgfr","454432","981254857445","priya123@gmail.com");
 console.log(person.toString());
 try {
 
@@ -154,3 +154,10 @@ try {
 catch (e) {
     console.error(e);
 }
+let newPerson = new Person("Swarali","More","Afgred","Bdsget","Sfdfsfd","154432","919885485745","swara23@gmail.com");
+console.log(newPerson.toString());
+let addressBookArray = [];
+addressBookArray[0] = newPerson;
+addressBookArray[1] = person;
+console.log(addressBookArray);
+
