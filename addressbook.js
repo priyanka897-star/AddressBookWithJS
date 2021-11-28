@@ -30,63 +30,63 @@ class Person {
             throw " Last Name is incorrect format";
         }
     }
-    get address() { return this._address;}
+    get address() { return this._address; }
     set address(add) {
         let addRegex = new RegExp("^[A-Za-z]{4,}$");
-        if( addRegex.test(add)){
+        if (addRegex.test(add)) {
             this._address = add;
         }
-        else{
+        else {
             throw "Address is incorrect format";
         }
     }
-    
-    get city() { return this._city;}
+
+    get city() { return this._city; }
     set city(cityName) {
         let cityRegex = new RegExp("^[A-Za-z]{4,}$");
-        if( cityRegex.test(cityName)){
+        if (cityRegex.test(cityName)) {
             this._city = cityName;
         }
-        else{
+        else {
             throw "City is incorrect format";
         }
     }
 
-    get state() { return this._state;}
+    get state() { return this._state; }
     set state(stateName) {
         let stateRegex = new RegExp("^[A-Za-z]{4,}$");
-        if( stateRegex.test(stateName)){
+        if (stateRegex.test(stateName)) {
             this._state = stateName;
         }
-        else{
+        else {
             throw "State is incorrect format";
         }
     }
 
-    get zip(){return this._zip;}
-    set zip(zipNo){
+    get zip() { return this._zip; }
+    set zip(zipNo) {
         let zipRegex = new RegExp("^[1-9][0-9]{5}$");
-        if(zipRegex.test(zipNo)){
+        if (zipRegex.test(zipNo)) {
             this._zip = zipNo;
-        }else{
+        } else {
             throw "zip code is incorrect format";
         }
     }
-    get phoneNumber(){ return this._phoneNumber;}
-    set phoneNumber(phoneNo){
+    get phoneNumber() { return this._phoneNumber; }
+    set phoneNumber(phoneNo) {
         let phoneRegex = new RegExp("^[0-9]{2}[0-9]{10}$");
-        if(phoneRegex.test(phoneNo)){
+        if (phoneRegex.test(phoneNo)) {
             this._phoneNumber = phoneNo;
-        }else{
+        } else {
             throw "PhoneNumber is incorrect format";
         }
     }
-    get email(){ return this._email;}
-    set email(e){
+    get email() { return this._email; }
+    set email(e) {
         let emailRegex = new RegExp("^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*");
-        if(emailRegex.test(e)){
+        if (emailRegex.test(e)) {
             this._email = e;
-        }else{
+        } else {
             console.log("Email is incorrect format");
         }
     }
@@ -96,7 +96,7 @@ class Person {
     }
 }
 
-let person = new Person("Priyanka","More","Adsfsd","Xsfsdfe","Sfdgfr","454432","981254857445","priya123@gmail.com");
+let person = new Person("Priyanka", "More", "Adsfsd", "Xsfsdfe", "Sfdgfr", "454432", "981254857445", "priya123@gmail.com");
 console.log(person.toString());
 try {
 
@@ -107,7 +107,7 @@ catch (e) {
 }
 try {
     person.lastName = "l";
-    
+
 }
 catch (e) {
     console.error(e);
@@ -129,14 +129,14 @@ catch (e) {
 }
 try {
     person.state = "a";
-    
+
 }
 catch (e) {
     console.error(e);
 }
 try {
     person.zip = "454";
-    
+
 }
 catch (e) {
     console.error(e);
@@ -149,12 +149,12 @@ catch (e) {
 }
 try {
     person.email = "ngf";
-   
+
 }
 catch (e) {
     console.error(e);
 }
-let newPerson = new Person("Swarali","More","Afgred","Sdghurr","Sfdfsfd","154432","919885485745","swara23@gmail.com");
+let newPerson = new Person("Swarali", "More", "Afgred", "Sdghurr", "Sfdfsfd", "154432", "919885485745", "swara23@gmail.com");
 console.log(newPerson.toString());
 let addressBookArray = [];
 addressBookArray[0] = newPerson;
@@ -167,7 +167,7 @@ addressBookArray[objIndex].city = "Mumbai";
 console.log("After Update : " + addressBookArray[objIndex]);
 
 //Uc5-Remove contact based on FirstName
-let person3 = new Person("Prachi", "Kadam", "Bgrfd", "Hyderabad", "Maharastra", "564763", "999876789654", "prachi43@gmail.com" );
+let person3 = new Person("Prachi", "Kadam", "Bgrfd", "Hyderabad", "Maharastra", "564763", "999876789654", "prachi43@gmail.com");
 addressBookArray[2] = person3;
 console.log(addressBookArray);
 let index = addressBookArray.findIndex((obj => obj.firstName == "Prachi"));
@@ -180,12 +180,12 @@ let count = addressBookArray.reduce((counter, person) => counter + 1, 0);
 console.log(count);
 
 //Uc7-Duplicate Check on Person Name
-let person4 = new Person("Swarali","More","Afgred","Sdghurr","Sfdfsfd","154432","919885485745","swara23@gmail.com");
+let person4 = new Person("Swarali", "More", "Afgred", "Sdghurr", "Sfdfsfd", "154432", "919885485745", "swara23@gmail.com");
 
-if(addressBookArray.findIndex(contact => contact.firstName == person4.firstName) == -1){
+if (addressBookArray.findIndex(contact => contact.firstName == person4.firstName) == -1) {
     addressBookArray[3] = person4;
 }
-else{
+else {
     console.log("Duplicate Entry");
 }
 console.log(addressBookArray);
@@ -203,28 +203,67 @@ let personFromState = addressBookArray.filter(person => person.state == "Tamilna
 console.log("Contacts from State 'Tamilnadu' are : ");
 console.log(personFromState);
 
-let contact = addressBookArray.filter(person5 => person5.city == "Chennai" || person5.state == "Tamilnadu" );
+let contact = addressBookArray.filter(person5 => person5.city == "Chennai" || person5.state == "Tamilnadu");
 console.log("Contacts from city 'Chennai' or State tamilnadu  are : ")
 console.log(contacts);
 
 //UC10 count person state and City.
 
 console.log("No.of Persons from city = 'Chennai' and state = 'Tamilnadu' : ");
-let countbyCityAndState = addressBookArray.filter(person5 => person5.city =="chennai" && person5.state == "Tamilnadu").reduce((count, person5) => count + 1,0);
+let countbyCityAndState = addressBookArray.filter(person5 => person5.city == "chennai" && person5.state == "Tamilnadu").reduce((count, person5) => count + 1, 0);
 console.log(countbyCityAndState);
 
 //UC11:Sort AddressBook by their first name
 console.log(addressBookArray);
-function compare( a, b ) {
-    if ( a.firstName < b.firstName ){
-      return -1;
+function compareByFirstName(a, b) {
+    if (a.firstName < b.firstName) {
+        return -1;
     }
-    if ( a.firstName > b.firstName ){
-      return 1;
+    if (a.firstName > b.firstName) {
+        return 1;
     }
     return 0;
-  }
+}
+//function to sort by city
+function compareByCity(a, b) {
+    if (a.city < b.city) {
+        return -1;
+    }
+    if (a.city > b.city) {
+        return 1;
+    }
+    return 0;
+}
+
+//function to sort by state
+function compareByState(a, b) {
+    if (a.state < b.state) {
+        return -1;
+    }
+    if (a.state > b.state) {
+        return 1;
+    }
+    return 0;
+}
+
+//function to sort  by zip
+function compareByZip(a, b) {
+    if (a.zip < b.zip) {
+        return -1;
+    }
+    if (a.zip > b.zip) {
+        return 1;
+    }
+    return 0;
+}
 
 console.log("AddressBook After Sorting");
-console.log(addressBookArray.sort(compare));
-  
+console.log("AddressBook After Sorting by First Name");
+console.log(addressBookArray.sort(compareByFirstName));
+console.log("Sort Based on City");
+console.log(addressBookArray.sort(compareByCity));
+console.log("Sort Based on State");
+console.log(addressBookArray.sort(compareByState));
+console.log("Sort Based on Zip");
+console.log(addressBookArray.sort(compareByZip));
+
