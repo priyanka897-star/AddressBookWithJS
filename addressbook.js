@@ -166,3 +166,11 @@ console.log("Before Update : " + addressBookArray[objIndex]);
 addressBookArray[objIndex].city = "Mumbai";
 console.log("After Update : " + addressBookArray[objIndex]);
 
+//Uc5-Remove contact based on FirstName
+let person3 = new Person("Prachi", "Kadam", "Bgrfd", "Hyderabad", "Maharastra", "564763", "999876789654", "prachi43@gmail.com" );
+addressBookArray[2] = person3;
+console.log(addressBookArray);
+let index = addressBookArray.findIndex((obj => obj.firstName == "Prachi"));
+addressBookArray.splice(index, 1);
+console.log("After Deletion");
+console.log(addressBookArray);
